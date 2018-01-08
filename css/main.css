@@ -3,6 +3,21 @@
   --grayLab: #2b2b2b;
 }
 
+/* REGISTER */
+.reg-form {
+  padding: 15%;
+}
+
+.reg-elem {
+  margin-top: 2%;
+}
+
+.reg-logo
+
+/* HOME */
+.header {
+  background-color: var(--yellowLab);
+}
 .section-top-row {
   margin-top: 5%;
 }
