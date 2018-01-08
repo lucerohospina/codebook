@@ -12,7 +12,7 @@
 
 <body>
   <!-- Encabezado -->
-  <header id="login-header" class="container-fluid p-0">
+  <header class="container-fluid p-0" id="login-header">
     <div class="overlay d-flex flex-row align-items-center justify-content-center">
       <figure class="col-8 col-sm-4">
         <img src="../assets/images/codebook-logo-blanco.svg" alt="Logo Codebook">
@@ -24,22 +24,22 @@
   <main class="container">
     <!-- Iniciar con correo -->
     <form class="mt-4 text-center">
-      <div class="form-group">
-        <label for="exampleInputEmail1" class="sr-only">Email address</label>
-        <input type="email" class="form-control mx-auto" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <div class="form-group form-400 mx-auto">
+        <label for="inputEmail1" class="sr-only">Email address</label>
+        <input type="email" class="form-control mx-auto" id="inputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1" class="sr-only">Password</label>
-        <input type="password" class="form-control mx-auto" id="exampleInputPassword1" placeholder="Password">
+      <div class="form-group form-400 mx-auto">
+        <label for="inputPassword1" class="sr-only">Password</label>
+        <input type="password" class="form-control mx-auto" id="inputPassword1" placeholder="Password">
       </div>
-      <button type="submit" class="btn btn-light form-control">Inicia sesión</button>
+      <button type="submit" class="btn btn-yellowLab form-control form-400">Inicia sesión</button>
     </form>
     <p class="mt-4 text-center">O bien...</p>
-    <form class="mt-4 text-center">
-      <div class="form-group">
+    <form class="mt-4">
+      <div class="form-group form-400 mx-auto">
         <button type="button" class="btn btn-primary form-control">Ingresa con Facebook</button>
       </div>
-      <div class="form-group">
+      <div class="form-group form-400 mx-auto">
         <button type="button" class="btn btn-danger form-control">Ingresa con Google</button>
       </div>
     </form>
