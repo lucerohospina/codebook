@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Profile - Codebook</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body class="d-flex flex-column min100vh">
   <header class="container-fluid">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-yellowLab">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-grayLab">
       <a class="navbar-brand" href="#">
         <img src="../assets/images/codebook-logo-blanco.svg" alt="Logo Codebook" width="130" height="45">
       </a>
@@ -43,7 +44,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-yellowLab my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
     </nav>
@@ -56,19 +57,32 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="profile-photo mx-auto float-md-left">
-            <img src="../assets/images/demo-user-pic.png" alt="">
+            <img src="../assets/images/mujer.jpg" alt="">
           </div>
           <div class="username text-center mt-md-3 ml-md-3 text-md-left float-md-left">
             <h3>Firstname Lastname</h3>
-            <p class="bio">Biografía del usuario</p>
+            <div id="bio" class="p-2">
+              <p>Biografía del usuario</p>
+            </div>
           </div>
         </div>
         <div class="col-12 col-md-6">
           <div class="card mt-3">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <form id="create-post">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1" class="sr-only">Create new post</label>
+                  <textarea class="form-control" placeholder="¿Que quieres compartir?" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group mb-0">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input d-none" id="upload-photo">
+                    <label for="upload-photo" class="btn btn-secondary">
+                      <i class="fa fa-picture-o" aria-hidden="true"></i>
+                    </label>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
