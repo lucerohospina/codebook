@@ -10,28 +10,37 @@
   <title>Register</title>
 </head>
 <body>
-  <section class="container-fluid">
-    <div class="row">
-      <img src="../assets/images/codebook-logo.svg" class="img-fluid reg-logo col-12 col-sm-4 offset-sm-4" alt="logo">
+  <!-- Encabezado -->
+  <header id="login-header" class="container-fluid p-0">
+    <div class="overlay d-flex flex-row align-items-center justify-content-center">
+      <figure class="col-8 col-sm-4">
+        <img src="../assets/images/codebook-logo-blanco.svg" alt="Logo Codebook">
+      </figure>
     </div>
-    <div class="reg-form">
-      <div class="input-group">
-        <input type="text" class="form-control reg-elem" placeholder="Nombre">
-        <input type="text" class="form-control reg-elem" placeholder="Apellido">
+  </header>
+  <!-- Formulario de register -->
+  <section class="container">
+    <form class="mt-5 text-center">
+      <div class="input-group max600 ml-custom">
+        <input type="text" class="form-control" placeholder="Nombre">
+        <input type="text" class="form-control" placeholder="Apellido">
       </div>
-      <div class="input-group">
-        <input type="text" class="form-control reg-elem" placeholder="Correo electrónico">
+      <div class="form-group mt-3">
+        <input type="text" class="form-control mx-auto max400" placeholder="Correo electrónico">
       </div>
-      <div class="input-group">
-        <input type="text" class="form-control reg-elem" placeholder="Contraseña">
+      <div class="form-group">
+        <input type="text" class="form-control mx-auto max400" placeholder="Contraseña">
       </div>
       <div class="form-check">
-        <input type="checkbox" class="form-check-input reg-elem" id="exampleCheck1">
-        <label class="form-check-label reg-elem" for="exampleCheck1">Estoy de acuerdo con los <a href="#">Términos y Condiciones</a></label>
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Estoy de acuerdo con los <a href="#">Términos y Condiciones</a></label>
       </div>
-      <button type="button" class="btn btn-secondary reg-elem">Crear Cuenta</button>
-  </div>
+      <button type="button" class="btn btn-secondary">Crear Cuenta</button>
+    </form>
   </section>
+  <footer class="position-absolute p-2 text-center">
+      <small id="reg-login" class="text-center">¿Ya tienes una cuenta? <a href="#">Entra aquí</a> y empieza a compartir.</small>
+  </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>

@@ -5,15 +5,7 @@
 }
 
 /* REGISTER */
-.reg-form {
-  padding: 15%;
-}
-
-.reg-elem {
-  margin-top: 2%;
-}
-
-/* LOGIN */
+/* Site styles */
 #login-header {
   height: 30vh;
   background-image: url('../assets/images/login-bg.jpg');
@@ -21,8 +13,10 @@
   background-size: cover;
 }
 
-.section-top-row {
-  margin-top: 5%;
+.overlay {
+  background-color: rgba(43, 43, 43, 0.5);
+  height: 100%;
+  width: 100%;
 }
 
 footer {
@@ -41,6 +35,15 @@ footer a:hover {
   color: var(--yellowLab);
 }
 
+/* Overwrite styles */
+.max400 {
+  max-width: 400px;
+}
+
+.max600 {
+  max-width: 600px;
+}
+
 /* Helpers */
 .bg-yellowLab {
   background-color: var(--yellowLab);
@@ -50,6 +53,13 @@ footer a:hover {
   background-color: rgba(43, 43, 43, 0.5);
   height: 100%;
   width: 100%;
+}
+
+/* medias */
+@media (min-width: 768px) {
+  .ml-custom {
+    margin-left: 25%;
+  }
 }
 
 .btn-yellowLab {
