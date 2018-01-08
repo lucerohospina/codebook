@@ -4,12 +4,8 @@
 }
 
 /* REGISTER */
-.reg-form {
-  padding: 15%;
-}
-
 .reg-elem {
-  margin-top: 2%;
+  
 }
 
 .reg-logo
@@ -18,6 +14,11 @@
 .header {
   background-color: var(--yellowLab);
 }
+
+.section-top-row {
+  margin-top: 5%;
+}
+
 /* Site styles */
 #login-header {
   height: 30vh;
@@ -30,10 +31,6 @@
   background-color: rgba(43, 43, 43, 0.5);
   height: 100%;
   width: 100%;
-}
-
-.section-top-row {
-  margin-top: 5%;
 }
 
 footer {
@@ -53,11 +50,22 @@ footer a:hover {
 }
 
 /* Overwrite styles */
-.form-control {
+.max400 {
   max-width: 400px;
 }
 
+.max600 {
+  max-width: 600px;
+}
+
 /* Helpers */
+
+/* medias */
+@media (min-width: 768px) {
+  .ml-custom {
+    margin-left: 25%;
+  }
+}
 
 
 
