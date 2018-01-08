@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.section-top-row {
+  margin-top: 5%;
+}
+
 footer {
   background-color: var(--grayLab);
   color: #fff;
