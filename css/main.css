@@ -4,8 +4,7 @@
   --grayLab: #2b2b2b;
 }
 
-/* REGISTER */
-/* Site styles */
+/* LOGIN */
 #login-header {
   height: 30vh;
   background-image: url('../assets/images/login-bg.jpg');
@@ -33,6 +32,19 @@ footer a{
 
 footer a:hover {
   color: var(--yellowLab);
+}
+
+/* HOME */
+.mt-custom {
+  margin-top: 70px;
+}
+
+.user-box {
+  border: 1px solid red;
+}
+
+.share-box{
+  border: 1px solid red;
 }
 
 /* PROFILE */
@@ -79,13 +91,6 @@ footer a:hover {
   max-width: 600px;
 }
 
-/* medias */
-@media (min-width: 768px) {
-  .ml-custom {
-    margin-left: 25%;
-  }
-}
-
 .btn-yellowLab {
   background-color: var(--yellowLab);
   color: var(--grayLab);
@@ -103,4 +108,11 @@ footer a:hover {
     left: 50%;
     text-align: center;
     margin:0 auto;
+}
+
+/* medias */
+@media (min-width: 768px) {
+  .ml-custom {
+    margin-left: 25%;
+  }
 }
