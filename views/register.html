@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../css/main.css">
   <title>Register</title>
 </head>
-<body>
+<body class="d-flex flex-column min100vh">
   <!-- Encabezado -->
   <header id="login-header" class="container-fluid p-0">
     <div class="overlay d-flex flex-row align-items-center justify-content-center">
@@ -38,9 +38,11 @@
       <button type="submit" id="reg-btn" class="btn btn-yellowLab mt-3">Crear Cuenta</button>
     </form>
   </section>
-  <footer class="position-absolute p-2 text-center">
-      <small id="reg-login" class="text-center">¿Ya tienes una cuenta? <a href="#">Entra aquí</a> y empieza a compartir.</small>
+  
+  <footer class="p-2 text-center">
+    <small class="text-center">¿Ya tienes una cuenta? <a href="#">Entra aquí</a> y empieza a compartir.</small>
   </footer>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script>
