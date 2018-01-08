@@ -13,7 +13,7 @@ $(document).ready(function() {
     event.preventDefault();
     console.log('click');
     // redireccion a siguiente vista
-    window.location.href = 'home.html';
+    // window.location.href = 'home.html';
     // Registro de Usuario (NUEVO)
     firebase.auth().createUserWithEmailAndPassword($emailReg, $passwordReg).catch(function(error) {
       // Handle Errors here.
