@@ -4,15 +4,6 @@
   --grayLab: #2b2b2b;
 }
 
-/* REGISTER */
-.reg-form {
-  padding: 15%;
-}
-
-.reg-elem {
-  margin-top: 2%;
-}
-
 /* LOGIN */
 #login-header {
   height: 30vh;
@@ -21,8 +12,10 @@
   background-size: cover;
 }
 
-.section-top-row {
-  margin-top: 5%;
+.overlay {
+  background-color: rgba(43, 43, 43, 0.5);
+  height: 100%;
+  width: 100%;
 }
 
 footer {
@@ -65,6 +58,7 @@ footer a:hover {
   width: 100%;
 }
 
+
 /* Helpers */
 .bg-yellowLab {
   background-color: var(--yellowLab);
@@ -76,6 +70,21 @@ footer a:hover {
   width: 100%;
 }
 
+.max400 {
+  max-width: 400px;
+}
+
+.max600 {
+  max-width: 600px;
+}
+
+/* medias */
+@media (min-width: 768px) {
+  .ml-custom {
+    margin-left: 25%;
+  }
+}
+
 .btn-yellowLab {
   background-color: var(--yellowLab);
   color: var(--grayLab);
@@ -83,10 +92,6 @@ footer a:hover {
 
 .btn-yellowLab:hover {
   background-color: var(--yellowLab-hover);
-}
-
-.form-400 {
-  max-width: 400px;
 }
 
 /* Overwrite styles */
