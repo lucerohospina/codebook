@@ -1,24 +1,10 @@
 :root {
   --yellowLab: #f7b617;
+  --yellowLab-hover: #e6a100;
   --grayLab: #2b2b2b;
 }
 
 /* REGISTER */
-.reg-elem {
-  
-}
-
-.reg-logo
-
-/* HOME */
-.header {
-  background-color: var(--yellowLab);
-}
-
-.section-top-row {
-  margin-top: 5%;
-}
-
 /* Site styles */
 #login-header {
   height: 30vh;
@@ -59,6 +45,15 @@ footer a:hover {
 }
 
 /* Helpers */
+.bg-yellowLab {
+  background-color: var(--yellowLab);
+}
+
+.overlay {
+  background-color: rgba(43, 43, 43, 0.5);
+  height: 100%;
+  width: 100%;
+}
 
 /* medias */
 @media (min-width: 768px) {
@@ -67,6 +62,15 @@ footer a:hover {
   }
 }
 
+.btn-yellowLab {
+  background-color: var(--yellowLab);
+  color: var(--grayLab);
+}
 
+.btn-yellowLab:hover {
+  background-color: var(--yellowLab-hover);
+}
 
-
+.form-400 {
+  max-width: 400px;
+}
