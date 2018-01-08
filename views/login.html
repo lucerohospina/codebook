@@ -8,6 +8,19 @@
   <title>Log in - Codebook</title>
   <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/main.css">
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAuWjgjDXgNHkKnscxwhVpSK6G_p-IZX2s",
+      authDomain: "codebook-cd8c9.firebaseapp.com",
+      databaseURL: "https://codebook-cd8c9.firebaseio.com",
+      projectId: "codebook-cd8c9",
+      storageBucket: "",
+      messagingSenderId: "42664775792"
+    };
+    firebase.initializeApp(config);
+  </script>
 </head>
 
 <body>
@@ -32,7 +45,7 @@
         <label for="inputPassword1" class="sr-only">Password</label>
         <input type="password" class="form-control mx-auto" id="inputPassword1" placeholder="Password">
       </div>
-      <button type="submit" class="btn btn-yellowLab form-control max-400">Inicia sesión</button>
+      <button type="submit" class="btn btn-yellowLab form-control max-400" id="login-btn">Inicia sesión</button>
     </form>
     <p class="mt-4 text-center">O bien...</p>
     <form class="mt-4">
@@ -45,13 +58,17 @@
     </form>
   </main>
 
-  <footer class="position-absolute p-2 text-center">
-    <small id="createAccount" class="text-center">¿No tienes una cuenta? <a href="#">Crea una cuenta nueva</a> y sé parte de nuestra red de egresadas.</small>
+  <footer class="container-fluid text-center">
+    <div class="row">
+      
+      <small id="createAccount" class="text-center col-12">¿No tienes una cuenta? <a href="#">Crea una cuenta nueva</a> y sé parte de nuestra red de egresadas.</small>
+    
+    </div>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="../vendors/bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/app.js"></script>
+  <script type="text/javascript" src="../js/login.js"></script>
 </body>
 
 </html>
