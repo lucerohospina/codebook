@@ -3,8 +3,42 @@
   --grayLab: #2b2b2b;
 }
 
+/* Site styles */
+#login-header {
+  height: 30vh;
+  background-image: url('../assets/images/login-bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
 
+.overlay {
+  background-color: rgba(43, 43, 43, 0.5);
+  height: 100%;
+  width: 100%;
+}
 
+footer {
+  background-color: var(--grayLab);
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer a{
+  color: var(--yellowLab);
+}
+
+footer a:hover {
+  color: var(--yellowLab);
+}
+
+/* Overwrite styles */
+.form-control {
+  max-width: 400px;
+}
+
+/* Helpers */
 
 
 
