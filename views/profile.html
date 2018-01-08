@@ -5,42 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Log in - Codebook</title>
+  <title>Profile - Codebook</title>
   <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
-  <header>
+  <header class="container-fluid">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-yellowLab">
       <a class="navbar-brand" href="#">
-        <img src="../assets/images/codebook-logo-blanco.svg" alt="Logo Codebook" width="120" height="30">
+        <img src="../assets/images/codebook-logo-blanco.svg" alt="Logo Codebook" width="130" height="45">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse float-left" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              Username
             </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Mi perfil</a>
+            <a class="dropdown-item" href="#">Ver lista de amigos</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Cerrar sesión</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Link <span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -52,7 +46,19 @@
   </header>
 
   <main>
-
+    <div class="">
+      <div id="cover-photo" class="container-fluid">
+      </div>
+      <div class="container user-info">
+        <div class="profile-photo mx-auto float-md-left">
+          <img src="../assets/images/demo-user-pic.png" alt="">
+        </div>
+        <div class="username text-center mt-md-3 ml-md-3 text-md-left float-md-left">
+          <h3>Firstname Lastname</h3>
+          <p class="bio">Biografía del usuario</p>
+        </div>
+      </div>
+    </div>
   </main>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

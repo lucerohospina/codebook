@@ -41,6 +41,30 @@ footer a:hover {
   color: var(--yellowLab);
 }
 
+/* PROFILE */
+#cover-photo {
+  margin-top: 56px;
+  height: 30vh;
+  background-image: url('../assets/images/cover-photo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  background-color: #e1e1e1;
+  border: 5px solid #fff;
+  border-radius: 5px;
+  transform: translateY(-25%);  
+}
+
+.profile-photo img {
+  width: 100%;
+}
+
 /* Helpers */
 .bg-yellowLab {
   background-color: var(--yellowLab);
@@ -63,4 +87,14 @@ footer a:hover {
 
 .form-400 {
   max-width: 400px;
+}
+
+/* Overwrite styles */
+.navbar-brand {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    text-align: center;
+    margin:0 auto;
 }
