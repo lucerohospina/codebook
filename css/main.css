@@ -41,11 +41,6 @@ footer a:hover {
   color: var(--yellowLab);
 }
 
-/* Overwrite styles */
-.form-400 {
-  max-width: 400px;
-}
-
 /* Helpers */
 .bg-yellowLab {
   background-color: var(--yellowLab);
@@ -64,4 +59,8 @@ footer a:hover {
 
 .btn-yellowLab:hover {
   background-color: var(--yellowLab-hover);
+}
+
+.form-400 {
+  max-width: 400px;
 }
