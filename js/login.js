@@ -1,16 +1,17 @@
 $(document).ready(function() {
   // Declarando variables
   var $loginBtn = $('#login-btn');
-  var $emailLogin = $('#inputEmail1').val();
-  var $passwordLogin = $('#inputPassword1').val();
-
+  
   // Asociando eventos
   $loginBtn.on('click', login);
 
   // Funciones
-  function login(event) {
-    event.preventDefault();
+  function login() {
+    var $emailLogin = $('#inputEmail1').val();
+    var $passwordLogin = $('#inputPassword1').val();
     console.log('click');
+    // redireccion a siguiente vista
+    $(location).attr('href', 'home.html');
     // Acceso de usuario (EXISTENTE)
     firebase.auth().signInWithEmailAndPassword($emailLogin, $passwordLogin).catch(function(error) {
       // Handle Errors here.
