@@ -56,7 +56,7 @@
         <img class="img-fluid" src="../assets/images/home-cover.jpg" alt="home-cover">
         <div class="row">
           <div class="col-8 col-sm-6">
-            <img src="../assets/images/demo-user-pic.png" class="img-fluid" alt="user">   
+            <img src="../assets/images/mujer.jpg" class="img-fluid" alt="user">   
           </div>
           <div class="col-4 col-sm-6">
             <p>Nombre</p>
@@ -65,23 +65,35 @@
         </div>
       </div>
       <!--columna de posteos-->
-      <div class="share-box col-12 col-sm-6 offset-sm-2">
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Comparte con Nosotras</label>
-            <textarea class="form-control" id="write-posts" rows="3" autofocus></textarea>
+      <div class="share-box col-12 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <form id="create-post">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1" class="sr-only">Create new post</label>
+                  <textarea id="write-posts" class="form-control" placeholder="¿Que quieres compartir?" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group mb-0">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input d-none" id="upload-photo">
+                    <label for="upload-photo" class="btn btn-secondary">
+                      <i class="fa fa-picture-o" aria-hidden="true"></i>
+                    </label>
+                    <button id="posts-btn" class="btn btn-secondary" disabled>Compartir</button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-          <button type="button" id="posts-btn" class="btn btn-secondary">Compartir</button>
+          
       </div>
     </div>
   </section>
   <!--FIN fila de usuario y de posteo-->
   <!--Sección donde aparecen las publicaciones-->
   <section class="container"> 
-    <div class="row">
-      <div class="col-8 offset-2 col-sm-8 offset-sm-2">
-        <h3>Compartidos</h3>
-        <div id="posts-container"></div>
-      </div>
+    <div id="posts-container">
+      
     </div>
   </section>
 
