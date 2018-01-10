@@ -54,7 +54,7 @@ $(document).ready(function() {
     console.log('ye!');
     console.log($textArea.val());
     if ($textArea.val()) {
-      $postsContainer.prepend('<div class="card mt-3"><div class="card-header btn-yellowLab"><small>Publicado por</small> Usuario</div><div class="card-body" id="appendLike"><p class="card-text new-post"></p></div></div>');
+      $postsContainer.prepend('<div class="card del-post mt-3"><div class="card-header btn-yellowLab"><small>Publicado por</small> Usuario</div><div class="card-body" id="appendLike"><p class="card-text new-post"></p></div></div>');
       $('.new-post').first().append($textArea.val());
       $('#appendLike').append('<button class="btn btn-secondary like-btn"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button>');
       $('.card-header').first().prepend('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
@@ -68,5 +68,10 @@ $(document).ready(function() {
     console.log('click success!');
     $(this).toggleClass('btn-primary').toggleClass('btn-secondary').toggleClass('font-weight-bold');
   }); 
+
+  $(document).on('click', '.close', function() {
+    console.log('close-click');
+    $(this).parent().parent().remove();
+  });
 });
 
