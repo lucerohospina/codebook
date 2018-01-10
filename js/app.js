@@ -10,10 +10,9 @@ var config = {
 
 firebase.initializeApp(config);
 
-// var user = null;
 var $loginGoogle = $('#google-login');
 var $loginFb = $('#fb-login');
-var $signOut = $('.signout');
+var $signOut = $('#sign-out');
 
 // login con Facebook
 var providerFb = new firebase.auth.FacebookAuthProvider();
@@ -29,6 +28,7 @@ $loginFb.click(function() {
       profilePhoto: user.photoURL,
     });
     console.log(user);
+    $(location).attr('href', 'home.html');
     // ...
   }).catch(function(error) {
     // Handle Errors here.
@@ -50,7 +50,7 @@ $loginGoogle.click(function() {
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = result.credential.accessToken;
     // The signed-in user info.
-    user = result.user;
+    var user = result.user;
     console.log(user.displayName);
     console.log(user.photoURL);
     firebase.database().ref('users/' + user.uid).set({
@@ -76,7 +76,7 @@ $loginGoogle.click(function() {
 $signOut.click(function() {
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
-    console.log('Cerrando sesión');
+    console.log('Cerrando sesión...');
     $(location).attr('href', 'login.html');
   }).catch(function(error) {
     // An error happened.
