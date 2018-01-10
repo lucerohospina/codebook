@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,10 +10,11 @@
   <link rel="stylesheet" href="../css/main.css">
   <title>Home</title>
 </head>
+
 <body>
   <header class="container-fluid">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-yellowLab">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="home.html">
         <img src="../assets/images/codebook-logo-blanco.svg" alt="Logo Codebook" width="130" height="45">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -23,15 +25,15 @@
       <div class="collapse navbar-collapse float-left" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            <a id="username" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               Username
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Mi perfil</a>
+              <a class="dropdown-item" href="profile.html">Mi perfil</a>
               <a class="dropdown-item" href="#">Ver lista de amigos</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Cerrar sesión</a>
+              <a class="dropdown-item signout" href="#">Cerrar sesión</a>
             </div>
           </li>
           <li class="nav-item active">
@@ -56,27 +58,28 @@
         <img class="img-fluid" src="../assets/images/home-cover.jpg" alt="home-cover">
         <div class="row">
           <div class="col-8 col-sm-6">
-            <img src="../assets/images/demo-user-pic.png" class="img-fluid" alt="user">   
+            <img src="../assets/images/demo-user-pic.png" class="img-fluid" alt="user">
           </div>
           <div class="col-4 col-sm-6">
             <p>Nombre</p>
-            <p><span>'cantidad'</span> Amigos</p>
+            <p>
+              <span>'cantidad'</span> Amigos</p>
           </div>
         </div>
       </div>
       <!--columna de posteos-->
       <div class="share-box col-12 col-sm-6 offset-sm-2">
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Comparte con Nosotras</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" autofocus></textarea>
-          </div>
-          <button type="button" class="btn btn-secondary">Compartir</button>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Comparte con Nosotras</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" autofocus></textarea>
+        </div>
+        <button type="button" class="btn btn-secondary">Compartir</button>
       </div>
     </div>
   </section>
   <!--FIN fila de usuario y de posteo-->
   <!--Sección donde aparecen las publicaciones-->
-  <section class="container"> 
+  <section class="container">
     <div class="row">
       <div class="col-8 offset-2 col-sm-8 offset-sm-2">
         <h3>Compartidos</h3>
@@ -85,8 +88,13 @@
     </div>
   </section>
 
+  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../js/register.js"></script>
+  <!-- Bootstrap -->
+  <script type="text/javascript" src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
 </body>
+
 </html>

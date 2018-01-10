@@ -14,7 +14,7 @@
 <body class="d-flex flex-column min100vh">
   <header class="container-fluid">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-grayLab">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="home.html">
         <img src="../assets/images/codebook-logo-blanco.svg" alt="Logo Codebook" width="130" height="45">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse float-left" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            <a class="nav-link dropdown-toggle displayUsername" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               Username
             </a>
@@ -60,9 +60,9 @@
             <img src="../assets/images/mujer.jpg" alt="">
           </div>
           <div class="username text-center mt-md-3 ml-md-3 text-md-left float-md-left">
-            <h3>Firstname Lastname</h3>
-            <div id="bio" class="p-2">
-              <p>Biografía del usuario</p>
+            <h3 class="displayUsername">Firstname Lastname</h3>
+            <div class="p-2">
+              <p id="displayEmail">Biografía del usuario</p>
             </div>
           </div>
         </div>
@@ -106,21 +106,14 @@
     </section>
   </main>
 
+  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAuWjgjDXgNHkKnscxwhVpSK6G_p-IZX2s",
-      authDomain: "codebook-cd8c9.firebaseapp.com",
-      databaseURL: "https://codebook-cd8c9.firebaseio.com",
-      projectId: "codebook-cd8c9",
-      storageBucket: "",
-      messagingSenderId: "42664775792"
-    };
-    firebase.initializeApp(config);
-  </script>
+  <!-- Bootstrap -->
   <script type="text/javascript" src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+  <script type="text/javascript" src="../js/app.js"></script>
   <script type="text/javascript" src="../js/profile.js"></script>
 </body>
 
