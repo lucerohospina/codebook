@@ -262,6 +262,15 @@ footer a:hover {
   white-space: normal;
 }
 
+/* Modal */
+.custom {
+  border: 1.5px solid var(--grayLab);
+  border-radius: 5px;
+  color: var(--yellowLab);
+  font-weight: bold;
+  padding: 1%;
+}
+
 /* medias */
 /* @media (min-width: 768px) {
   .ml-custom {

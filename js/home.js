@@ -30,11 +30,6 @@ $(document).ready(function() {
   $('#create-post').submit(function() {
     return false;
   });
-  
-  // Previniendo que el formulario se envie (que no refresque la página)
-  $('#create-post').submit(function() {
-    return false;
-  });
 
   $textArea.on('keyup', function() {
     if ($textArea.val()) {
