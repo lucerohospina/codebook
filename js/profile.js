@@ -3,11 +3,13 @@ $(document).ready(function() {
   var $signOutBtn = $('#sign-out');
   var $username = $('.displayUsername');
   var $userEmail = $('#displayEmail');
+  var $profilePhoto = $('#profile-photo');
   var $textArea = $('#write-posts');
   var $postBtn = $('#posts-btn');
   var $postsContainer = $('#posts-container');
   var $likeBtn = $('.like-btn');
     
+  // Obteniendo datos del usuario actual
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
@@ -17,6 +19,9 @@ $(document).ready(function() {
       var emailVerified = user.emailVerified;
       var uid = user.uid;
       console.log(user);
+      $username.text(name);
+      $userEmail.text(email);
+      $profilePhoto.attr('src', photoUrl);
     } else {
       // No user is signed in.
     }
@@ -30,11 +35,6 @@ $(document).ready(function() {
   console.log(name);
   
   // Funciones
-  
-  function displayInfo() {
-    $username.text(name);
-    $userEmail.text(email);
-  }
 
   // Previniendo que el formulario se envie (que no refresque la página)
   $('#create-post').submit(function() {

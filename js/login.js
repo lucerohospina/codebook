@@ -5,24 +5,6 @@ $(document).ready(function() {
   // Asociando eventos
   $loginBtn.on('click', login);
 
-  // Funciones
-  function login() {
-    var $emailLogin = $('#inputEmail1').val();
-    var $passwordLogin = $('#inputPassword1').val();
-    console.log('click');
-    // redireccion a siguiente vista
-    $(location).attr('href', 'home.html');
-    // Acceso de usuario (EXISTENTE)
-    firebase.auth().signInWithEmailAndPassword($emailLogin, $passwordLogin).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      console.log(errorCode);
-      console.log(errorMessage);
-    });
-  }
-
   function watcher() {
     // Observador de datos de usuario
     firebase.auth().onAuthStateChanged(function(user) {

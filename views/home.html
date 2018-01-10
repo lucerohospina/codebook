@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse float-left" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
-            <a id="username" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            <a id="username" class="nav-link dropdown-toggle displayUsername" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               Username
             </a>
@@ -33,12 +33,11 @@
               <a class="dropdown-item" href="profile.html">Mi perfil</a>
               <a class="dropdown-item" href="#">Ver lista de amigos</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item signout" href="#">Cerrar sesión</a>
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Link
-              <span class="sr-only">(current)</span>
+            <a class="nav-link" href="#" id="sign-out">Cerrar sesión
+              <span class="sr-only"></span>
             </a>
           </li>
         </ul>
@@ -55,13 +54,13 @@
     <div class="row mt-custom">
       <!--columna de usuario-->
       <div class="col-12 col-sm-4 user-box">
-        <img class="img-fluid" src="../assets/images/home-cover.jpg" alt="home-cover">
+        <img class="img-fluid" src="../assets/images/cover-photo.jpg" alt="home-cover">
         <div class="row">
           <div class="col-8 col-sm-6">
-            <img src="../assets/images/mujer.jpg" class="img-fluid" alt="user">   
+            <img id="profile-photo" src="../assets/images/default.jpg" class="img-fluid" alt="user">   
           </div>
           <div class="col-4 col-sm-6">
-            <p>Nombre</p>
+            <a href="profile.html" class="displayUsername">Nombre</a>
             <p>
               <span>'cantidad'</span> Amigos</p>
           </div>

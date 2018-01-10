@@ -56,8 +56,7 @@ $loginGoogle.click(function() {
     firebase.database().ref('users/' + user.uid).set({
       name: user.displayName,
       email: user.email,
-      profilePhoto: user.photoURL,
-
+      profilePhoto: user.photoURL
     });
     $(location).attr('href', 'home.html');
     // ...
@@ -73,11 +72,11 @@ $loginGoogle.click(function() {
   });
 });
 
-
 // Cerrar sesión
 $signOut.click(function() {
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
+    console.log('Cerrando sesión');
     $(location).attr('href', 'login.html');
   }).catch(function(error) {
     // An error happened.
