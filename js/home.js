@@ -29,9 +29,7 @@ $(document).ready(function() {
   $textArea.on('keyup', function() {
     if ($textArea.val()) {
       $postBtn.removeAttr('disabled');
-      $postBtn.css({'background': '#f7b617',
-        'color': '#2b2b2b',
-        'border': 'none'});
+      $postBtn.removeClass('btn-secondary').addClass('btn-yellowLab');
     } else {
       $postBtn.attr('disabled', true);
     }
@@ -50,8 +48,8 @@ $(document).ready(function() {
   //   $postBtn.css({ 'background': '#fff'});
   // }
   
-  function sharePost() {
-    console.log('ye!');
+  function sharePost(event) {
+    event.preventDefault();
     console.log($textArea.val());
     if ($textArea.val()) {
       $postsContainer.prepend('<div class="new-post card"></div>');
