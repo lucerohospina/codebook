@@ -29,9 +29,6 @@ $(document).ready(function() {
 
   // Asociando eventos
   $postBtn.on('click', sharePost);
-  // Evento al boton de CERRAR SESION
-  $signOutBtn.on('click', signingOut);
-  displayInfo();
   console.log(name);
   
   // Funciones

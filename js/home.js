@@ -26,6 +26,11 @@ $(document).ready(function() {
     }
   });
   
+  // Previniendo que el formulario se envie (que no refresque la página)
+  $('#create-post').submit(function() {
+    return false;
+  });
+  
   $textArea.on('keyup', function() {
     if ($textArea.val()) {
       $postBtn.removeAttr('disabled');
