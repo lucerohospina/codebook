@@ -185,15 +185,7 @@ footer a:hover {
 
 /* HOME */
 .mt-custom {
-  margin-top: 70px;
-}
-
-.user-box {
-  border: 1px solid red;
-}
-
-.share-box{
-  border: 1px solid red;
+  margin-top: 80px;
 }
 
 /* PROFILE */
@@ -218,6 +210,14 @@ footer a:hover {
 
 .profile-photo img {
   width: 100%;
+}
+
+/* HOME */
+
+.new-post {
+  border: 1px solid var(--grayLab);
+  margin: 2%;
+  padding: 2%;
 }
 
 
