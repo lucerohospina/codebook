@@ -292,3 +292,13 @@ footer a:hover {
 .btn {
   white-space: normal;
 }
+
+/* Modal */
+.custom {
+  border: 1.5px solid var(--grayLab);
+  border-radius: 5px;
+  color: var(--yellowLab);
+  font-weight: bold;
+  padding: 1%;
+}
+
