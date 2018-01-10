@@ -1,7 +1,7 @@
 :root {
   --yellowLab: #f7b617;
   --yellowLab-hover: #e6a100;
-  --grayLab: #2b2b2b;
+  --grayLab: rgb(43,43,43);
 }
 
 /* SPLASH */
