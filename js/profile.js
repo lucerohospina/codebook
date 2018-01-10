@@ -7,7 +7,7 @@ $(document).ready(function() {
   var $textArea = $('#write-posts');
   var $postBtn = $('#posts-btn');
   var $postsContainer = $('#posts-container');
-  var $likeBtn = $('.like-btn');
+  // var $likeBtn = $('.like-btn');
     
   // Obteniendo datos del usuario actual
   firebase.auth().onAuthStateChanged(function(user) {
@@ -55,7 +55,7 @@ $(document).ready(function() {
     console.log('ye!');
     console.log($textArea.val());
     if ($textArea.val()) {
-      $postsContainer.prepend('<div class="card mt-3"><div class="card-header"><small>Publicado por</small>Usuario</div><div class="card-body" id="appendLike"><p class="card-text new-post"></p></div></div>');
+      $postsContainer.prepend('<div class="card mt-3"><div class="card-header"><small>Publicado por</small> Usuario</div><div class="card-body" id="appendLike"><p class="card-text new-post"></p></div></div>');
       $('.new-post').first().append($textArea.val());
       $('#appendLike').append('<button class="btn btn-secondary like-btn"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button>');
       $textArea.val('');
@@ -63,8 +63,9 @@ $(document).ready(function() {
     } 
   }
 
-  $likeBtn.on('click', function() {
-    console.log('hey!');
-    $likeBtn.toggleClass('btn-primary').toggleClass('btn-secondary');
-  });
+  $(document).on('click', '.like-btn', function() {
+    console.log('click success!');
+    $(this).toggleClass('btn-primary').toggleClass('btn-secondary');
+  }); 
 });
+

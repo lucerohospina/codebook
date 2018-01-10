@@ -26,9 +26,11 @@ $loginFb.click(function() {
       name: user.displayName,
       email: user.email,
       profilePhoto: user.photoURL,
+    }).then( user => {
+      window.location.href = 'home.html';
     });
     console.log(user);
-    $(location).attr('href', 'home.html');
+    // $(location).attr('href', 'home.html');
     // ...
   }).catch(function(error) {
     // Handle Errors here.
