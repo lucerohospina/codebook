@@ -42,19 +42,6 @@ $(document).ready(function() {
     }
   });
   
-
-  // function activeBtn() {
-  //   if ($textArea.val()) {
-  //     $postBtn.removeAttr('disabled');
-  //     $postBtn.css({ 'background': '#f7b617'});
-  //   }
-  // }
-
-  // function inactiveBtn() {
-  //   $postBtn.attr('disabled', true);
-  //   $postBtn.css({ 'background': '#fff'});
-  // }
-  
   function sharePost() {
     console.log('ye!');
     console.log($textArea.val());
@@ -64,6 +51,12 @@ $(document).ready(function() {
       $('#appendLike').append('<button class="btn btn-secondary like-btn"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button>');
       $textArea.val('');
       $textArea.focus();
+      $postBtn.attr('disabled', true);
     } 
   }
+
+  $(document).on('click', '.like-btn', function() {
+    console.log('click success!');
+    $(this).toggleClass('btn-primary').toggleClass('btn-secondary');
+  }); 
 });

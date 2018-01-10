@@ -7,7 +7,6 @@ $(document).ready(function() {
   var $textArea = $('#write-posts');
   var $postBtn = $('#posts-btn');
   var $postsContainer = $('#posts-container');
-  // var $likeBtn = $('.like-btn');
     
   // Obteniendo datos del usuario actual
   firebase.auth().onAuthStateChanged(function(user) {
@@ -60,6 +59,7 @@ $(document).ready(function() {
       $('#appendLike').append('<button class="btn btn-secondary like-btn"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button>');
       $textArea.val('');
       $textArea.focus();
+      $postBtn.attr('disabled', true);
     } 
   }
 
