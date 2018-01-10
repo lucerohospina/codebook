@@ -28,8 +28,7 @@ $(document).ready(function() {
 
   // Asociando eventos
   $postBtn.on('click', sharePost);
-  console.log(name);
-  
+   
   // Funciones
 
   // Previniendo que el formulario se envie (que no refresque la página)

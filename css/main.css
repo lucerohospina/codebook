@@ -199,27 +199,20 @@ footer a:hover {
 }
 
 .profile-photo {
-  width: 150px;
-  height: 150px;
   overflow: hidden;
   background-color: #e1e1e1;
   border: 5px solid #fff;
   border-radius: 100%;
   transform: translateY(-25%);  
-}
-
-.profile-photo img {
-  width: 100%;
+  max-width: 100px;
 }
 
 /* HOME */
-
 .new-post {
   border: 1px solid var(--grayLab);
   margin: 2%;
   padding: 2%;
 }
-
 
 /* Helpers */
 .bg-yellowLab {
@@ -254,6 +247,10 @@ footer a:hover {
 }
 
 /* Overwrite styles */
+.navbar {
+  box-shadow: 0px 1px 6px 0.5px rgba(95, 95, 95, 0.5);
+}
+
 .navbar-brand {
     position: absolute;
     top: 0;

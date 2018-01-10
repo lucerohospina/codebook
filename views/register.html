@@ -22,19 +22,23 @@
   </header>
   <!-- Formulario de register -->
   <section class="container">
-    <form class="mt-5 text-center">
-      <div class="input-group max600 ml-custom">
-        <input type="text" id="inputName" class="form-control" placeholder="Nombre">
-        <input type="text" id="inputLastName" class="form-control" placeholder="Apellido">
+    <form class="max400 mt-5 mx-auto text-center">
+      <div class="form-row">
+        <div class="col-6">
+          <input type="text" id="inputName" class="form-control" placeholder="Nombre" required>            
+        </div>
+        <div class="col-6">
+          <input type="text" id="inputLastName" class="form-control" placeholder="Apellido" required>
+        </div>
       </div>
       <div class="form-group mt-3">
-        <input type="email" id="inputEmail" class="form-control mx-auto max400" placeholder="Correo electrónico">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required>
       </div>
       <div class="form-group">
-        <input type="password" id="inputPassword" class="form-control mx-auto max400" placeholder="Contraseña">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
       </div>
       <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
         <label class="form-check-label" for="exampleCheck1">Estoy de acuerdo con los
           <a href="#">Términos y Condiciones</a>
         </label>

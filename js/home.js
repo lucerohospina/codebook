@@ -17,13 +17,18 @@ $(document).ready(function() {
       var photoUrl = user.photoURL;
       var emailVerified = user.emailVerified;
       var uid = user.uid;
-      console.log(user);
+
       $username.text(name);
       $userEmail.text(email);
       $profilePhoto.attr('src', photoUrl);
     } else {
       // No user is signed in.
     }
+  });
+
+  // Previniendo que el formulario se envie (que no refresque la página)
+  $('#create-post').submit(function() {
+    return false;
   });
   
   // Previniendo que el formulario se envie (que no refresque la página)
