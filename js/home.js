@@ -17,7 +17,7 @@ $(document).ready(function() {
       var photoUrl = user.photoURL;
       var emailVerified = user.emailVerified;
       var uid = user.uid;
-      console.log(user);
+
       $username.text(name);
       $userEmail.text(email);
       $profilePhoto.attr('src', photoUrl);
@@ -25,11 +25,18 @@ $(document).ready(function() {
       // No user is signed in.
     }
   });
+
+  // Previniendo que el formulario se envie (que no refresque la página)
+  $('#create-post').submit(function() {
+    return false;
+  });
   
   $textArea.on('keyup', function() {
     if ($textArea.val()) {
       $postBtn.removeAttr('disabled');
-      $postBtn.removeClass('btn-secondary').addClass('btn-yellowLab');
+      $postBtn.css({'background': '#f7b617',
+        'color': '#2b2b2b',
+        'border': 'none'});
     } else {
       $postBtn.attr('disabled', true);
     }
@@ -48,12 +55,13 @@ $(document).ready(function() {
   //   $postBtn.css({ 'background': '#fff'});
   // }
   
-  function sharePost(event) {
-    event.preventDefault();
+  function sharePost() {
+    console.log('ye!');
     console.log($textArea.val());
     if ($textArea.val()) {
-      $postsContainer.prepend('<div class="new-post card"></div>');
+      $postsContainer.prepend('<div class="card mt-3"><div class="card-header"><small>Publicado por</small> Usuario</div><div class="card-body" id="appendLike"><p class="card-text new-post"></p></div></div>');
       $('.new-post').first().append($textArea.val());
+      $('#appendLike').append('<button class="btn btn-secondary like-btn"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button>');
       $textArea.val('');
       $textArea.focus();
     } 

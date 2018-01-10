@@ -29,11 +29,7 @@ $(document).ready(function() {
 
   // Asociando eventos
   $postBtn.on('click', sharePost);
-  // Evento al boton de CERRAR SESION
-  $signOutBtn.on('click', signingOut);
-  displayInfo();
-  console.log(name);
-  
+   
   // Funciones
 
   // Previniendo que el formulario se envie (que no refresque la página)
@@ -45,7 +41,9 @@ $(document).ready(function() {
   $textArea.on('keyup', function() {
     if ($textArea.val()) {
       $postBtn.removeAttr('disabled');
-      $postBtn.removeClass('btn-secondary').addClass('btn-yellowLab');
+      $postBtn.css({'background': '#f7b617',
+        'color': '#2b2b2b',
+        'border': 'none'});
     } else {
       $postBtn.attr('disabled', true);
     }
@@ -56,7 +54,7 @@ $(document).ready(function() {
     console.log('ye!');
     console.log($textArea.val());
     if ($textArea.val()) {
-      $postsContainer.prepend('<div class="card mt-3"><div class="card-header"><small>Publicado por</small>Usuario</div><div class="card-body" id="appendLike"><p class="card-text new-post"></p></div></div>');
+      $postsContainer.prepend('<div class="card mt-3"><div class="card-header"><small>Publicado por</small> Usuario</div><div class="card-body" id="appendLike"><p class="card-text new-post"></p></div></div>');
       $('.new-post').first().append($textArea.val());
       $('#appendLike').append('<button class="btn btn-secondary like-btn"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button>');
       $textArea.val('');
@@ -64,8 +62,8 @@ $(document).ready(function() {
     } 
   }
 
-  $likeBtn.on('click', function() {
-    console.log('hey!');
-    $likeBtn.toggleClass('btn-primary').toggleClass('btn-secondary');
+  $(document).on('click', '.like-btn', function() {
+    console.log('click success!');
+    $(this).toggleClass('btn-primary').toggleClass('btn-secondary');
   });
 });

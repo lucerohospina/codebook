@@ -30,9 +30,10 @@ $(document).ready(function() {
         name: user.displayName,
         email: user.email,
         profilePhoto: user.photoURL
-      });
-      console.log('todo bien');
-      window.location.href = 'home.html';
+      }).then(
+        user => {
+          $(location).attr('href', 'home.html');
+        });
       // ...
     }).catch(function(error) {
       // Handle Errors here.
@@ -58,9 +59,10 @@ $(document).ready(function() {
         name: user.displayName,
         email: user.email,
         profilePhoto: user.photoURL,
-      });
-      console.log(user);
-      $(location).attr('href', 'home.html');
+      }).then(
+        user => {
+          $(location).attr('href', 'home.html');
+        });
       // ...
     }).catch(function(error) {
       // Handle Errors here.
