@@ -1,20 +1,24 @@
 :root {
   --yellowLab: #f7b617;
   --yellowLab-hover: #e6a100;
-  --grayLab: rgb(43,43,43);
+  --grayLab: rgb(43, 43, 43);
 }
 
 * {
   font-family: 'Nunito', sans-serif;
 }
 
+
 /* SPLASH */
+
 .splash {
   background: linear-gradient(to bottom right, #ffd11b, #ff8400);
   min-height: 100vh;
 }
 
+
 /* SPLASH ANIMATION */
+
 .logo img {
   width: 100%;
 }
@@ -23,7 +27,7 @@
   height: 50px;
   width: 50px;
   position: relative;
-  animation: invert 1s*2 infinite steps(2,end);
+  animation: invert 1s*2 infinite steps(2, end);
 }
 
 .ball {
@@ -58,12 +62,12 @@
   }
 }
 
-@keyframes ball1{
+@keyframes ball1 {
   12% {
     transform: none;
   }
   26% {
-    transform: translateX(50% / 2) scale(1, .8) 
+    transform: translateX(50% / 2) scale(1, .8)
   }
   40% {
     transform: translateX(50%) scale(.8, .8);
@@ -72,7 +76,7 @@
     transform: translateX(50%) scale(.8, .8);
   }
   74% {
-    transform: translate(50%, 50% / 2) scale(.6, .8)    
+    transform: translate(50%, 50% / 2) scale(.6, .8)
   }
   88% {
     transform: translate(50%, 50%) scale(.6, .6);
@@ -82,12 +86,12 @@
   }
 }
 
-@keyframes ball2{
+@keyframes ball2 {
   12% {
     transform: none;
   }
   26% {
-    transform: translateX(50% / 2) scale(1, .8) 
+    transform: translateX(50% / 2) scale(1, .8)
   }
   40% {
     transform: translateX(50%) scale(.8, .8);
@@ -96,7 +100,7 @@
     transform: translateX(50%) scale(.8, .8);
   }
   74% {
-    transform: translate(50%, -50% / 2) scale(.6, .8)  
+    transform: translate(50%, -50% / 2) scale(.6, .8)
   }
   88% {
     transform: translate(50%, -50%) scale(.6, .6);
@@ -106,12 +110,12 @@
   }
 }
 
-@keyframes ball3{
+@keyframes ball3 {
   12% {
     transform: none;
   }
   26% {
-    transform: translateX(-50% / 2) scale(1, .8) 
+    transform: translateX(-50% / 2) scale(1, .8)
   }
   40% {
     transform: translateX(-50%) scale(.8, .8);
@@ -120,7 +124,7 @@
     transform: translateX(-50%) scale(.8, .8);
   }
   74% {
-    transform: translate(-50%, 50% / 2) scale(.6, .8)  
+    transform: translate(-50%, 50% / 2) scale(.6, .8)
   }
   88% {
     transform: translate(-50%, 50%) scale(.6, .6);
@@ -130,12 +134,12 @@
   }
 }
 
-@keyframes ball4{
+@keyframes ball4 {
   12% {
     transform: none;
   }
   26% {
-    transform: translateX(-50% / 2) scale(1, .8) 
+    transform: translateX(-50% / 2) scale(1, .8)
   }
   40% {
     transform: translateX(-50%) scale(.8, .8);
@@ -144,7 +148,7 @@
     transform: translateX(-50%) scale(.8, .8);
   }
   74% {
-    transform: translate(-50%, -50% / 2) scale(.6, .8)  
+    transform: translate(-50%, -50% / 2) scale(.6, .8)
   }
   88% {
     transform: translate(-50%, -50%) scale(.6, .6);
@@ -153,8 +157,10 @@
     transform: translate(-50%, -50%) scale(.6, .6);
   }
 }
+
 
 /* LOGIN */
+
 #login-header {
   height: 30vh;
   background-image: url('../assets/images/login-bg.jpg');
@@ -179,7 +185,7 @@ footer {
   min-height: 5vh;
 }
 
-footer a{
+footer a {
   color: var(--yellowLab);
 }
 
@@ -187,7 +193,9 @@ footer a:hover {
   color: var(--yellowLab);
 }
 
+
 /* HOME */
+
 .mt-custom {
   margin-top: 80px;
 }
@@ -203,7 +211,9 @@ footer a:hover {
   padding: 2%;
 }
 
+
 /* PROFILE */
+
 #cover-photo {
   margin-top: 56px;
   height: 30vh;
@@ -216,7 +226,7 @@ footer a:hover {
 .profile-photo {
   overflow: hidden;
   max-width: 100px;
-  transform: translateY(-25%);  
+  transform: translateY(-25%);
 }
 
 .rounded-img {
@@ -227,7 +237,9 @@ footer a:hover {
   max-width: 100px;
 }
 
+
 /* Helpers */
+
 .bg-yellowLab {
   background-color: var(--yellowLab);
 }
@@ -264,7 +276,7 @@ footer a:hover {
   color: #fff;
 }
 
-#file-label > input {
+#file-label>input {
   position: fixed;
 }
 
@@ -277,23 +289,27 @@ footer a:hover {
   border-top-right-radius: 5px;
 }
 
+
 /* Overwrite styles */
+
 .navbar {
   box-shadow: 0px 1px 6px 0.5px rgba(95, 95, 95, 0.5);
 }
 
 .navbar-brand {
-    position: absolute;
-    top: 0;
-    transform: translateX(-50%);
-    left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  left: 50%;
 }
 
 .btn {
   white-space: normal;
 }
 
+
 /* Modal */
+
 .custom {
   border: 1.5px solid var(--grayLab);
   border-radius: 5px;
@@ -301,4 +317,3 @@ footer a:hover {
   font-weight: bold;
   padding: 1%;
 }
-
