@@ -24,20 +24,21 @@
 }
 
 .spinner {
+  animation: invert 1s*2 infinite steps(2, end);
   height: 50px;
-  width: 50px;
   position: relative;
+  width: 50px;
   animation: invert 1s*2 infinite steps(2, end);
 }
 
 .ball {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
   background: #fff;
+  border-radius: 50%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .ball-1 {
@@ -162,10 +163,10 @@
 /* LOGIN */
 
 #login-header {
-  height: 30vh;
   background-image: url('../assets/images/login-bg.jpg');
-  background-position: center;
   background-size: cover;
+  background-position: center;
+  height: 30vh;
 }
 
 .overlay {
@@ -224,8 +225,8 @@ footer a:hover {
 }
 
 .profile-photo {
-  overflow: hidden;
   max-width: 100px;
+  overflow: hidden;
   transform: translateY(-25%);
 }
 
@@ -233,8 +234,8 @@ footer a:hover {
   background-color: #e1e1e1;
   border: 5px solid #fff;
   border-radius: 100%;
-  width: 100%;
   max-width: 100px;
+  width: 100%;
 }
 
 
@@ -297,6 +298,10 @@ footer a:hover {
 }
 
 .navbar-brand {
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
   position: absolute;
   top: 0;
   transform: translateX(-50%);
