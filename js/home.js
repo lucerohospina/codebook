@@ -30,6 +30,7 @@ $(document).ready(function() {
     return false;
   });
 
+  // Publicar un post
   $textArea.on('keyup', function() {
     if ($textArea.val()) {
       $postBtn.removeAttr('disabled');
@@ -43,16 +44,35 @@ $(document).ready(function() {
   
   function sharePost() {
     console.log($textArea.val());
-    if ($textArea.val()) {
-      $postsContainer.prepend('<div class="card del-post mt-3"><div class="card-header btn-yellowLab"><small>Publicado por</small> <span class="displayUsername">Usuario</span></div><div class="card-body" id="appendLike"><p class="card-text new-post rounded-corners"></p></div></div>');
-      $('.new-post').first().append($textArea.val());
-      $('#appendLike').append('<button class="btn btn-secondary like-btn"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button>');
-      $('.card-header').first().prepend('<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
-      $textArea.val('');
-      $textArea.focus();
-      $postBtn.attr('disabled', true);
-    } 
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user && $textArea.val()) {
+        var name = user.displayName;
+        var msg = $textArea.val();
+        var htmlPost = '<div class="card del-post mt-3"><div class="card-header btn-yellowLab"><small>Publicado por</small> <span>' + name + '</span> <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="card-body" id="appendLike"><p class="card-text new-post rounded-corners">' + msg + '</p><button class="btn btn-secondary like-btn rounded-corners"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button></div></div>';
+
+        $textArea.val('');
+        $textArea.focus();
+        $postBtn.attr('disabled', true);
+
+        firebase.database().ref('posts/').push({
+          name: user.displayName,
+          message: $textArea.val()
+        });
+      }
+    });
   }
+
+  firebase.database().ref('posts/')
+    .on('value', function(snapshot) {
+      var html = '';
+      snapshot.forEach(function(el) {
+        var element = el.val();
+        var namePost = element.name;
+        var messagePost = element.message;
+
+        $postsContainer.prepend(htmlPost);
+      });
+    });
 
   $(document).on('click', '.like-btn', function() {
     console.log('click success!');

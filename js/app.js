@@ -17,20 +17,21 @@ $(document).ready(function() {
   var $loginEmail = $('#email-login');
 
   // Login con email
-  
-  // firebase.auth().signInWithEmailAndPassword(email, password)
-  //   .catch(function(error) {
-  //     // Handle Errors here.
-  //     var errorCode = error.code;
-  //     var errorMessage = error.message;
-  //     // ...
-  //   });
-  
-  // firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
-  //   name: user.displayName,
-  //   email: user.email,
-  //   uid: firebase.auth().currentUser.uid
-  // });
+  $loginEmail.click(function() {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+    
+    firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
+      name: user.displayName,
+      email: user.email,
+      uid: firebase.auth().currentUser.uid
+    });
+  });
 
   // Login con Google
   var providerGoogle = new firebase.auth.GoogleAuthProvider();
