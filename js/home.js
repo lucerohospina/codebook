@@ -19,12 +19,7 @@ $(document).ready(function() {
 
       $username.text(name);
       $userEmail.text(email);
-      if (user.photoUrl) {
-        $profilePhoto.attr('src', photoUrl);
-      } else {
-        $profilePhoto.attr('src', 'https://firebasestorage.googleapis.com/v0/b/codebook-cd8c9.appspot.com/o/postedImages%2Fdefault.jpg?alt=media&token=5897a927-f9b6-4ded-9331-0dc8032ae325');
-      }
-      
+      $profilePhoto.attr('src', photoUrl);
     } else {
       // No user is signed in.
     }

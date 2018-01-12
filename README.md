@@ -16,7 +16,9 @@
 
 ![Sin titulo](assets/docs/vista-splash.png)
 
-![Sin titulo](assets/docs/vista-login.JPG)
+![Sin titulo](assets/docs/login-view.JPG)
+
+![Sin titulo](assets/docs/register-view.JPG)
 
 ![Sin titulo](assets/docs/vista-home.png)
 
