@@ -82,10 +82,10 @@
 
 /* LOGIN */
 #login-header {
-  height: 30vh;
   background-image: url('../assets/images/login-bg.jpg');
-  background-position: center;
   background-size: cover;
+  background-position: center;
+  height: 30vh;
 }
 
 .overlay {
@@ -129,6 +129,12 @@ footer a:hover {
   padding: 2%;
 }
 
+.bottom-img {
+  background-image: url('../assets/images/bottom-img-2.svg');
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
 
 /* PROFILE */
 #cover-photo {
@@ -138,12 +144,6 @@ footer a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-.profile-photo {
-  overflow: hidden;
-  max-width: 100px;
-  top: -50%;
 }
 
 /* Helpers */
@@ -223,7 +223,6 @@ footer a:hover {
   background-color: #e1e1e1;
   border: 3px solid #fff;
   border-radius: 100%;
-  max-width: 100px;
 }
 
 
@@ -233,6 +232,10 @@ footer a:hover {
 }
 
 .navbar-brand {
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
   position: absolute;
   top: 0;
   transform: translateX(-50%);
@@ -244,6 +247,9 @@ footer a:hover {
   border: none;
 }
 
+.fa {
+  color: #afafaf;
+}
 
 /* Modal */
 .custom {

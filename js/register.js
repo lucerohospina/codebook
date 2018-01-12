@@ -28,21 +28,27 @@ $(document).ready(function() {
   }
 
   // Funciones para los input de nombre, apellido y check
-  $nameInput.on('keyup', function() {
+  $nameInput.on('input', function() {
+    console.log('HOLA');
     if ($nameInput.val() !== '' && $nameInput.val()) {
       $validateName = true;
       ableRegBtn();
+      $nameInput.popover('hide');
     } else {
       disableRegBtn();
+      $nameInput.popover('show');
     }
   });
 
-  $lastInput.on('keyup', function() {
+  $lastInput.on('input', function() {
+    console.log('CHAU');
     if ($lastInput.val() !== '' && $lastInput.val()) {
       $validateLast = true;
       ableRegBtn();
+      $lastInput.popover('hide');
     } else {
       disableRegBtn();
+      $lastInput.popover('show');
     }
   });
 
@@ -56,23 +62,31 @@ $(document).ready(function() {
     }
   });
 
-  $emailInput.on('keyup', function() {
+  $emailInput.on('input', function() {
     console.log('escribiendo email');
-    if ($emailInput.val() !== '' && $emailInput.val()) {
+    var $regexEmail = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
+    console.log($regexEmail.test($(this).val()));
+    if ($regexEmail.test($(this).val()) && $(this).val() && $(this).val() !== '') {
       $validateEmail = true;
       ableRegBtn();
+      $emailInput.popover('hide');
     } else {
       disableRegBtn();
+      $emailInput.popover('show');
     }
   });
 
-  $passwordInput.on('keyup', function() {
+  $passwordInput.on('input', function() {
     console.log('escribiendo password');
-    if ($passwordInput.val() !== '' && $passwordInput.val()) {
+    var $regexPassword = /^(?=.*[A-Za-z])[A-Za-z]{6,}$/;
+    console.log($regexPassword.test($(this).val()));
+    if ($regexPassword.test($(this).val())) {
       $validatePassword = true;
       ableRegBtn();
+      $passwordInput.popover('hide');
     } else {
       disableRegBtn();
+      $passwordInput.popover('show');
     }
   });
 
@@ -108,4 +122,12 @@ $(document).ready(function() {
       }
     });
   }
+
+  $(function() {
+    $('[data-toggle="popover"]').popover();
+  });
+
+  $('.popover-dismiss').popover({
+    trigger: 'focus'
+  });
 });
