@@ -26,17 +26,17 @@
     <form class="max400 mt-5 mx-auto text-center">
       <div class="form-row">
         <div class="col-6">
-          <input type="text" id="inputName" class="form-control" placeholder="Nombre" required>            
+          <input type="text" id="inputName" class="form-control" placeholder="Nombre" data-placement="left" data-toggle="popover" data-content="Aquí tu nombre" required>            
         </div>
         <div class="col-6">
-          <input type="text" id="inputLastName" class="form-control" placeholder="Apellido" required>
+          <input type="text" id="inputLastName" class="form-control" placeholder="Apellido" data-toggle="popover" data-content="Aquí tu apellido" required>
         </div>
       </div>
       <div class="form-group mt-3">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" data-toggle="popover" data-content="Escribe una dirección de correo válida" required>
       </div>
       <div class="form-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" data-placement="left" data-toggle="popover" data-content="Tu contraseña debe tener al menos 6 caracteres" required>
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
@@ -80,6 +80,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
   <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
   <script src="../js/app.js"></script>
+  <script src="../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../js/register.js"></script>
 </body>
 
