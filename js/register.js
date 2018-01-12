@@ -15,7 +15,7 @@ $(document).ready(function() {
 
   // Asociando eventos
   $regBtn.click(register);
-  
+
   // Funciones
   // Funciones para el regBtn
   function ableRegBtn() {
@@ -62,6 +62,7 @@ $(document).ready(function() {
     }
   });
 
+// Funciones para los input de email y password
   $emailInput.on('input', function() {
     console.log('escribiendo email');
     var $regexEmail = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
@@ -122,6 +123,8 @@ $(document).ready(function() {
       }
     });
   }
+
+
 
   $(function() {
     $('[data-toggle="popover"]').popover();

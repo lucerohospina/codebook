@@ -82,16 +82,10 @@
 
 /* LOGIN */
 #login-header {
-  background-image: url('../assets/images/login-bg.jpg');
+  background-image: url('../assets/images/bottom-img.svg');
   background-size: cover;
   background-position: center;
   height: 30vh;
-}
-
-.overlay {
-  background-color: rgba(43, 43, 43, 0.5);
-  height: 100%;
-  width: 100%;
 }
 
 #login-main {
