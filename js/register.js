@@ -62,7 +62,7 @@ $(document).ready(function() {
     }
   });
 
-// Funciones para los input de email y password
+  // Funciones para los input de email y password
   $emailInput.on('input', function() {
     console.log('escribiendo email');
     var $regexEmail = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
@@ -110,20 +110,22 @@ $(document).ready(function() {
       });
 
     firebase.auth().onAuthStateChanged(function(user) {
-      var username = $nameInput.val() + $lastInput.val();    
+      var username = $nameInput.val() + ' ' + $lastInput.val();    
       if (user) {
         firebase.database().ref('users/' + user.uid).set({
           name: username,
           email: user.email,
-          uid: user.uid
-        });
+          uid: user.uid,
+          profilePhoto: 'https://firebasestorage.googleapis.com/v0/b/codebook-cd8c9.appspot.com/o/postedImages%2Fdefault.jpg?alt=media&token=5897a927-f9b6-4ded-9331-0dc8032ae325'
+        }).then(user => {
+          window.location.href = 'home.html';
+        }); 
         console.log('User is registered.');
       } else {
         console.log('Registration failed.');   
       }
     });
   }
-
 
 
   $(function() {

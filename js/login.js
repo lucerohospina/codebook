@@ -1,27 +1,4 @@
 $(document).ready(function() {
-  var $loginBtn = $('#email-login');
-
-  $loginBtn.on('click', userLogin);
-
-  function userLogin() {
-    var $emailLog = $('#email').val();
-    var $passwordLog = $('#password').val();
-  
-    console.log('click');
-    console.log($emailLog);
-    console.log($passwordLog);
-    firebase.auth().signInWithEmailAndPassword($emailLog, $passwordLog).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      console.log(errorCode);
-      console.log($passwordLog);
-    }).then(user => {
-      window.location.href = 'home.html';
-    }); 
-  }
-
   function loginwatcher() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
@@ -37,7 +14,7 @@ $(document).ready(function() {
         // ...
       } else {
         // User is signed out.
-        console.log('no existe usuario reg')
+        console.log('no existe usuario reg');
         // ...
       }
     });
