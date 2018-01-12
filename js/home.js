@@ -48,27 +48,33 @@ $(document).ready(function() {
       if (user && $textArea.val()) {
         var name = user.displayName;
         var msg = $textArea.val();
-        var htmlPost = '<div class="card del-post mt-3"><div class="card-header btn-yellowLab"><small>Publicado por</small> <span>' + name + '</span> <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="card-body" id="appendLike"><p class="card-text new-post rounded-corners">' + msg + '</p><button class="btn btn-secondary like-btn rounded-corners"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button></div></div>';
+        var like = 
 
-        $textArea.val('');
         $textArea.focus();
         $postBtn.attr('disabled', true);
 
         firebase.database().ref('posts/').push({
           name: user.displayName,
-          message: $textArea.val()
+          message: $textArea.val(),
+          likeState: $('.btn-like').hasClass('btn-secondary')
         });
       }
+      $textArea.val('');
     });
   }
 
   firebase.database().ref('posts/')
     .on('value', function(snapshot) {
-      var html = '';
+      var htmlPost = '';
       snapshot.forEach(function(el) {
         var element = el.val();
         var namePost = element.name;
         var messagePost = element.message;
+        htmlPost = '<div class="card del-post mt-3"><div class="card-header btn-yellowLab"><small>Publicado por</small> <span>' + namePost + '</span> <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="card-body" id="appendLike"><p class="card-text new-post rounded-corners">' + messagePost + '</p><button class="btn btn-secondary like-btn rounded-corners"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Me gusta</button></div></div>';
+
+        if (element.likeState === true) {
+          $('.btn-like').addClass('btn-secondary');
+        }
 
         $postsContainer.prepend(htmlPost);
       });
