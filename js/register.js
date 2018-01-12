@@ -93,24 +93,35 @@ $(document).ready(function() {
 
   // Funcion para el registro de usuario al click del boton
   function register() {
-    var $emailReg = $('#inputEmail').val();
-    var $passwordReg = $('#inputPassword').val();
+    var $emailReg = $emailInput.val();
+    var $passwordReg = $passwordInput.val();
+    var $usernameReg = $nameInput.val() + $lastInput.val();
   
-    console.log('click');
     console.log($emailReg);
     console.log($passwordReg);
 
     // Registro de Usuario (NUEVO) con FIREBASE
-    firebase.auth().createUserWithEmailAndPassword($emailReg, $passwordReg).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-      // ...
-    }).then(user => {
-      window.location.href = 'home.html';
-    }); 
+    firebase.auth().createUserWithEmailAndPassword($emailReg, $passwordReg)
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      var username = $nameInput.val() + $lastInput.val();    
+      if (user) {
+        firebase.database().ref('users/' + user.uid).set({
+          name: username,
+          email: user.email,
+          uid: user.uid
+        });
+        console.log('User is registered.');
+      } else {
+        console.log('Registration failed.');   
+      }
+    });
   }
 
 

@@ -11,21 +11,24 @@
 </head>
 
 <body>
-  <main class="container-fluid splash d-flex flex-column align-items-center justify-content-center">
+  <main id="splash" class="container-fluid min100vh d-flex flex-column align-items-center justify-content-center">
+    <!-- Logo -->
     <div class="logo col-8 col-md-4 my-4">
       <figure>
         <img src="assets/images/codebook-logo-blanco.svg" alt="">
       </figure>
     </div>
-    <div class="spinner">
-      <div class="ball ball-1"></div>
-      <div class="ball ball-2"></div>
-      <div class="ball ball-3"></div>
-      <div class="ball ball-4"></div>
+    <!-- Animación de carga -->
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
     </div>
   </main>
 
+  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
   <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
   
   <script src="js/splash.js"></script>

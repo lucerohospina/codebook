@@ -1,23 +1,53 @@
+// Initialize Firebase
+var config = {
+  apiKey: 'AIzaSyAuWjgjDXgNHkKnscxwhVpSK6G_p-IZX2s',
+  authDomain: 'codebook-cd8c9.firebaseapp.com',
+  databaseURL: 'https://codebook-cd8c9.firebaseio.com',
+  projectId: 'codebook-cd8c9',
+  storageBucket: 'codebook-cd8c9.appspot.com',
+  messagingSenderId: '42664775792'
+};
+
+firebase.initializeApp(config);
+
 $(document).ready(function() {
-  // Initialize Firebase
-  var config = {
-    apiKey: 'AIzaSyAuWjgjDXgNHkKnscxwhVpSK6G_p-IZX2s',
-    authDomain: 'codebook-cd8c9.firebaseapp.com',
-    databaseURL: 'https://codebook-cd8c9.firebaseio.com',
-    projectId: 'codebook-cd8c9',
-    storageBucket: 'codebook-cd8c9.appspot.com',
-    messagingSenderId: '42664775792'
-  };
-
-  firebase.initializeApp(config);
-
   var $loginGoogle = $('#google-login');
   var $loginFb = $('#fb-login');
   var $signOut = $('#sign-out');
+  var $loginEmail = $('#email-login');
+  var $email = $('#email');
+  var $password = $('#password');
 
-  // login con Google
+  // Login con email
+  $loginEmail.click(function(event) {
+    event.preventDefault();
+
+    var email = $email.val();
+    var password = $password.val();
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+    
+    // firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
+    //   name: user.displayName,
+    //   email: user.email,
+    //   uid: firebase.auth().currentUser.uid
+    // });
+
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        $(location).attr('href', 'home.html');
+      }
+    });
+  });
+
+  // Login con Google
   var providerGoogle = new firebase.auth.GoogleAuthProvider();
-
   $loginGoogle.click(function() {
     firebase.auth().signInWithPopup(providerGoogle).then(function(result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -29,6 +59,7 @@ $(document).ready(function() {
       firebase.database().ref('users/' + user.uid).set({
         name: user.displayName,
         email: user.email,
+        uid: user.uid,
         profilePhoto: user.photoURL
       }).then(
         user => {
@@ -47,7 +78,7 @@ $(document).ready(function() {
     });
   });
 
-  // login con Facebook
+  // Login con Facebook
   var providerFb = new firebase.auth.FacebookAuthProvider();
   $loginFb.click(function() {
     firebase.auth().signInWithPopup(providerFb).then(function(result) {

@@ -15,28 +15,28 @@
 <body class="d-flex flex-column min100vh">
   <!-- Encabezado -->
   <header id="login-header" class="container-fluid p-0">
-    <div class="overlay d-flex flex-row align-items-center justify-content-center">
+    <div class="mt-3 d-flex flex-row align-items-center justify-content-center">
       <figure class="col-8 col-sm-4">
-        <img src="../assets/images/codebook-logo-blanco.svg" alt="Logo Codebook">
+        <img src="../assets/images/codebook-logo.svg" alt="Logo Codebook">
       </figure>
     </div>
   </header>
   <!-- Formulario de register -->
-  <section class="container">
+  <section class="container ">
     <form class="max400 mt-5 mx-auto text-center">
       <div class="form-row">
         <div class="col-6">
-          <input type="text" id="inputName" class="form-control" placeholder="Nombre" data-placement="top" data-toggle="popover" data-content="Aquí tu nombre" required>            
+          <input type="text" id="inputName" class="form-control rounded-corners" placeholder="Nombre" data-placement="left" data-toggle="popover" data-content="Aquí tu nombre" required>            
         </div>
         <div class="col-6">
-          <input type="text" id="inputLastName" class="form-control" placeholder="Apellido" data-placement="top" data-toggle="popover" data-content="Aquí tu apellido" required>
+          <input type="text" id="inputLastName" class="form-control rounded-corners" placeholder="Apellido" data-toggle="popover" data-content="Aquí tu apellido" required>
         </div>
       </div>
       <div class="form-group mt-3">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" data-placement="top" data-toggle="popover" data-content="Escribe una dirección de correo válida" required>
+        <input type="email" id="inputEmail" class="form-control rounded-corners" placeholder="Correo electrónico" data-toggle="popover" data-content="Escribe una dirección de correo válida" required>
       </div>
       <div class="form-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" data-placement="bottom" data-toggle="popover" data-content="Tu contraseña debe tener al menos 6 caracteres" required>
+        <input type="password" id="inputPassword" class="form-control rounded-corners" placeholder="Contraseña" data-placement="left" data-toggle="popover" data-content="Tu contraseña debe tener al menos 6 caracteres" required>
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
@@ -44,7 +44,7 @@
           <a data-toggle="modal" data-target="#terms-modal" href="#">Términos y Condiciones</a>
         </label>
       </div>
-      <button type="button" id="reg-btn" class="btn btn-yellowLab mt-3" disabled>Crear Cuenta</button>
+      <button type="button" id="reg-btn" class="btn btn-yellowLab rounded-corners mt-3" disabled>Crear Cuenta</button>
     </form>
   </section>
 
