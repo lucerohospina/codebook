@@ -23,17 +23,18 @@ $(document).ready(function() {
       $regBtn.removeAttr('disabled');
     }
   }
+
   function disableRegBtn() {
     $regBtn.attr('disabled', true);
   }
 
   // Funciones para los input de nombre, apellido y check
   $nameInput.on('input', function() {
-    console.log('HOLA');
     if ($nameInput.val() !== '' && $nameInput.val()) {
       $validateName = true;
       ableRegBtn();
       $nameInput.popover('hide');
+      console.log('Nombre');
     } else {
       disableRegBtn();
       $nameInput.popover('show');
@@ -41,11 +42,11 @@ $(document).ready(function() {
   });
 
   $lastInput.on('input', function() {
-    console.log('CHAU');
     if ($lastInput.val() !== '' && $lastInput.val()) {
       $validateLast = true;
       ableRegBtn();
       $lastInput.popover('hide');
+      console.log('Apellido');
     } else {
       disableRegBtn();
       $lastInput.popover('show');
@@ -57,6 +58,7 @@ $(document).ready(function() {
     if (event.target.checked) {
       $validateChecked = true;
       ableRegBtn();
+      console.log('Check');
     } else {
       disableRegBtn();
     }
@@ -67,10 +69,11 @@ $(document).ready(function() {
     console.log('escribiendo email');
     var $regexEmail = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
     console.log($regexEmail.test($(this).val()));
-    if ($regexEmail.test($(this).val()) && $(this).val() && $(this).val() !== '') {
+    if ($regexEmail.test($(this).val())) {
       $validateEmail = true;
       ableRegBtn();
       $emailInput.popover('hide');
+      console.log('Email');
     } else {
       disableRegBtn();
       $emailInput.popover('show');
@@ -79,12 +82,13 @@ $(document).ready(function() {
 
   $passwordInput.on('input', function() {
     console.log('escribiendo password');
-    var $regexPassword = /^(?=.*[A-Za-z])[A-Za-z]{6,}$/;
+    var $regexPassword = /^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z\0-9]{6,}$/;
     console.log($regexPassword.test($(this).val()));
     if ($regexPassword.test($(this).val())) {
       $validatePassword = true;
       ableRegBtn();
       $passwordInput.popover('hide');
+      console.log('Password');
     } else {
       disableRegBtn();
       $passwordInput.popover('show');
@@ -102,6 +106,13 @@ $(document).ready(function() {
 
     // Registro de Usuario (NUEVO) con FIREBASE
     firebase.auth().createUserWithEmailAndPassword($emailReg, $passwordReg)
+      .then(function(user) {
+        var username = $nameInput.val() + ' ' + $lastInput.val();    
+        return user.updateProfile({
+          displayName: username,
+          photoURL: 'https://firebasestorage.googleapis.com/v0/b/codebook-cd8c9.appspot.com/o/postedImages%2Fdefault.jpg?alt=media&token=5897a927-f9b6-4ded-9331-0dc8032ae325'
+        });
+      })
       .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -113,10 +124,10 @@ $(document).ready(function() {
       var username = $nameInput.val() + ' ' + $lastInput.val();    
       if (user) {
         firebase.database().ref('users/' + user.uid).set({
-          name: username,
+          name: user.displayName,
           email: user.email,
           uid: user.uid,
-          profilePhoto: 'https://firebasestorage.googleapis.com/v0/b/codebook-cd8c9.appspot.com/o/postedImages%2Fdefault.jpg?alt=media&token=5897a927-f9b6-4ded-9331-0dc8032ae325'
+          profilePhoto: user.photoURL
         }).then(user => {
           window.location.href = 'home.html';
         }); 

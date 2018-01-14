@@ -63,11 +63,7 @@
   }
 }
 
-/* WELCOME */
-.gray-grad {
-  background: linear-gradient(to bottom, #fff, #f3f3f3);
-}
-
+/* LOGIN */
 #welcome-image {
   min-height: 30vh;
   background-image: url('../assets/images/welcome-img.svg');
@@ -80,16 +76,12 @@
   min-height: 70vh;
 }
 
-/* LOGIN */
-#login-header {
+/* REGISTER */
+#reg-header {
   background-image: url('../assets/images/bottom-img.svg');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   height: 30vh;
-}
-
-#login-main {
-  min-height: 50vh;
 }
 
 footer {
@@ -150,10 +142,8 @@ footer a:hover {
   background-color: var(--grayLab);
 }
 
-.overlay {
-  background-color: rgba(43, 43, 43, 0.5);
-  height: 100%;
-  width: 100%;
+.gray-grad {
+  background: linear-gradient(to bottom, #fff, #f3f3f3);
 }
 
 .max400 {
