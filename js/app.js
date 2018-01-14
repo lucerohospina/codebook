@@ -18,6 +18,10 @@ $(document).ready(function() {
   var $email = $('#email');
   var $password = $('#password');
 
+  var $username = $('.displayUsername');
+  var $userEmail = $('#displayEmail');
+  var $profilePhoto = $('#profile-photo');
+
   // Login con email
   $loginEmail.click(function(event) {
     event.preventDefault();
@@ -32,12 +36,6 @@ $(document).ready(function() {
         var errorMessage = error.message;
         // ...
       });
-    
-    // firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
-    //   name: user.displayName,
-    //   email: user.email,
-    //   uid: firebase.auth().currentUser.uid
-    // });
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -54,8 +52,6 @@ $(document).ready(function() {
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
-      console.log(user.displayName);
-      console.log(user.photoURL);
       firebase.database().ref('users/' + user.uid).set({
         name: user.displayName,
         email: user.email,
@@ -93,8 +89,6 @@ $(document).ready(function() {
       }).then(user => {
         window.location.href = 'home.html';
       });
-      console.log(user);
-      // $(location).attr('href', 'home.html');
       // ...
     }).catch(function(error) {
       // Handle Errors here.
@@ -108,6 +102,24 @@ $(document).ready(function() {
     });
   });
 
+  // Obteniendo datos del usuario actual
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      var name = user.displayName;
+      var email = user.email;
+      var photoUrl = user.photoURL;
+      var emailVerified = user.emailVerified;
+      var uid = user.uid;
+      // console.log(user);
+      $username.text(name);
+      $userEmail.text(email);
+      $profilePhoto.attr('src', photoUrl);
+    } else {
+      // No user is signed in.
+    }
+  });
+  
   // Cerrar sesión
   $signOut.click(function() {
     firebase.auth().signOut().then(function() {

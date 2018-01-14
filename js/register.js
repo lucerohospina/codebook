@@ -23,6 +23,7 @@ $(document).ready(function() {
       $regBtn.removeAttr('disabled');
     }
   }
+
   function disableRegBtn() {
     $regBtn.attr('disabled', true);
   }
@@ -34,6 +35,7 @@ $(document).ready(function() {
       $validateName = true;
       ableRegBtn();
       $nameInput.popover('hide');
+      console.log('Nombre');
     } else {
       disableRegBtn();
       $nameInput.popover('show');
@@ -46,6 +48,7 @@ $(document).ready(function() {
       $validateLast = true;
       ableRegBtn();
       $lastInput.popover('hide');
+      console.log('Apellido');
     } else {
       disableRegBtn();
       $lastInput.popover('show');
@@ -57,6 +60,7 @@ $(document).ready(function() {
     if (event.target.checked) {
       $validateChecked = true;
       ableRegBtn();
+      console.log('Check');
     } else {
       disableRegBtn();
     }
@@ -71,6 +75,7 @@ $(document).ready(function() {
       $validateEmail = true;
       ableRegBtn();
       $emailInput.popover('hide');
+      console.log('Email');
     } else {
       disableRegBtn();
       $emailInput.popover('show');
@@ -85,6 +90,7 @@ $(document).ready(function() {
       $validatePassword = true;
       ableRegBtn();
       $passwordInput.popover('hide');
+      console.log('Password');
     } else {
       disableRegBtn();
       $passwordInput.popover('show');
@@ -95,13 +101,19 @@ $(document).ready(function() {
   function register() {
     var $emailReg = $emailInput.val();
     var $passwordReg = $passwordInput.val();
-    var $usernameReg = $nameInput.val() + $lastInput.val();
   
     console.log($emailReg);
     console.log($passwordReg);
 
     // Registro de Usuario (NUEVO) con FIREBASE
     firebase.auth().createUserWithEmailAndPassword($emailReg, $passwordReg)
+      .then(function(user) {
+        var username = $nameInput.val() + ' ' + $lastInput.val();    
+        return user.updateProfile({
+          displayName: username,
+          photoURL: 'https://firebasestorage.googleapis.com/v0/b/codebook-cd8c9.appspot.com/o/postedImages%2Fdefault.jpg?alt=media&token=5897a927-f9b6-4ded-9331-0dc8032ae325'
+        });
+      })
       .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -110,13 +122,12 @@ $(document).ready(function() {
       });
 
     firebase.auth().onAuthStateChanged(function(user) {
-      var username = $nameInput.val() + ' ' + $lastInput.val();    
       if (user) {
         firebase.database().ref('users/' + user.uid).set({
-          name: username,
+          name: user.displayName,
           email: user.email,
           uid: user.uid,
-          profilePhoto: 'https://firebasestorage.googleapis.com/v0/b/codebook-cd8c9.appspot.com/o/postedImages%2Fdefault.jpg?alt=media&token=5897a927-f9b6-4ded-9331-0dc8032ae325'
+          profilePhoto: user.photoURL
         }).then(user => {
           window.location.href = 'home.html';
         }); 
@@ -127,7 +138,7 @@ $(document).ready(function() {
     });
   }
 
-
+  // Funciones para activar los popovers
   $(function() {
     $('[data-toggle="popover"]').popover();
   });

@@ -1,30 +1,14 @@
 $(document).ready(function() {
-  var $username = $('.displayUsername');
-  var $userEmail = $('#displayEmail');
-  var $profilePhoto = $('#profile-photo');
+  // Declarando variables
+  var $signOutBtn = $('#sign-out');
   var $textArea = $('#write-posts');
   var $postBtn = $('#posts-btn');
   var $postsContainer = $('#posts-container');
 
+  // Asociando eventos
   $postBtn.on('click', sharePost);
-
-  // Obteniendo datos del usuario actual
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      var name = user.displayName;
-      var email = user.email;
-      var photoUrl = user.photoURL;
-      var uid = user.uid;
-
-      $username.text(name);
-      $userEmail.text(email);
-      $profilePhoto.attr('src', photoUrl);
-    } else {
-      // No user is signed in.
-    }
-  });
-
+   
+  // Funciones
   // Previniendo que el formulario se envie (que no refresque la página)
   $('#create-post').submit(function() {
     return false;
@@ -32,7 +16,7 @@ $(document).ready(function() {
 
   // Publicar un post
   $textArea.on('keyup', function() {
-    if ($textArea.val()) {
+    if ($textArea.val() && $textArea.val() !== ' ') {
       $postBtn.removeAttr('disabled');
       $postBtn.css({'background': '#f7b617',
         'color': '#2b2b2b',
@@ -48,7 +32,7 @@ $(document).ready(function() {
       if (user && $textArea.val()) {
         var name = user.displayName;
         var msg = $textArea.val();
-        var like = 
+        // var like = 
 
         $textArea.focus();
         $postBtn.attr('disabled', true);
