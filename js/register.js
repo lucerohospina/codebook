@@ -30,7 +30,8 @@ $(document).ready(function() {
 
   // Funciones para los input de nombre, apellido y check
   $nameInput.on('input', function() {
-    if ($nameInput.val() !== '' && $nameInput.val()) {
+    console.log('HOLA');
+    if ($nameInput.val().length >= 3) {
       $validateName = true;
       ableRegBtn();
       $nameInput.popover('hide');
@@ -42,7 +43,8 @@ $(document).ready(function() {
   });
 
   $lastInput.on('input', function() {
-    if ($lastInput.val() !== '' && $lastInput.val()) {
+    console.log('CHAU');
+    if ($lastInput.val().length >= 3) {
       $validateLast = true;
       ableRegBtn();
       $lastInput.popover('hide');
@@ -99,7 +101,6 @@ $(document).ready(function() {
   function register() {
     var $emailReg = $emailInput.val();
     var $passwordReg = $passwordInput.val();
-    var $usernameReg = $nameInput.val() + $lastInput.val();
   
     console.log($emailReg);
     console.log($passwordReg);
@@ -121,7 +122,6 @@ $(document).ready(function() {
       });
 
     firebase.auth().onAuthStateChanged(function(user) {
-      var username = $nameInput.val() + ' ' + $lastInput.val();    
       if (user) {
         firebase.database().ref('users/' + user.uid).set({
           name: user.displayName,
@@ -138,7 +138,7 @@ $(document).ready(function() {
     });
   }
 
-
+  // Funciones para activar los popovers
   $(function() {
     $('[data-toggle="popover"]').popover();
   });
