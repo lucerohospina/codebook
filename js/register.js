@@ -30,7 +30,7 @@ $(document).ready(function() {
   // Funciones para los input de nombre, apellido y check
   $nameInput.on('input', function() {
     console.log('HOLA');
-    if ($nameInput.val() !== '' && $nameInput.val()) {
+    if ($nameInput.val().length >= 3) {
       $validateName = true;
       ableRegBtn();
       $nameInput.popover('hide');
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
   $lastInput.on('input', function() {
     console.log('CHAU');
-    if ($lastInput.val() !== '' && $lastInput.val()) {
+    if ($lastInput.val().length >= 3) {
       $validateLast = true;
       ableRegBtn();
       $lastInput.popover('hide');
@@ -67,7 +67,7 @@ $(document).ready(function() {
     console.log('escribiendo email');
     var $regexEmail = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
     console.log($regexEmail.test($(this).val()));
-    if ($regexEmail.test($(this).val()) && $(this).val() && $(this).val() !== '') {
+    if ($regexEmail.test($(this).val())) {
       $validateEmail = true;
       ableRegBtn();
       $emailInput.popover('hide');
@@ -79,7 +79,7 @@ $(document).ready(function() {
 
   $passwordInput.on('input', function() {
     console.log('escribiendo password');
-    var $regexPassword = /^(?=.*[A-Za-z])[A-Za-z]{6,}$/;
+    var $regexPassword = /^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z\0-9]{6,}$/;
     console.log($regexPassword.test($(this).val()));
     if ($regexPassword.test($(this).val())) {
       $validatePassword = true;
