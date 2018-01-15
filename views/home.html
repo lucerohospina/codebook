@@ -77,7 +77,7 @@
               <form id="create-post">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1" class="sr-only">Create new post</label>
-                  <textarea id="write-posts" class="form-control" placeholder="¿Que quieres compartir?" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea id="write-posts" class="form-control" placeholder="¿Que quieres compartir?" rows="3" autofocus></textarea>
                 </div>
                 <div class="form-row mb-0">
                   <div class="custom-file col">
@@ -101,9 +101,12 @@
   </section>
   <!--FIN fila de usuario y de posteo-->
   <!--Sección donde aparecen las publicaciones-->
-  <section class="container mb-4"> 
-    <div id="posts-container">
-      
+  <section class="container-fluid mb-4"> 
+    <div class="row">
+      <div class="d-none d-md-block col-md-4 text-center mt-3">
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flaboratoriala%2F%3Fref%3Dbr_rs&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      </div>
+      <div id="posts-container" class="col-12 col-md-8"></div>
     </div>
   </section>
 
@@ -113,7 +116,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Bootstrap -->
   <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
-  
+  <script src="../vendors/moment.js"></script>
   <script src="../js/app.js"></script>
   <script src="../js/home.js"></script>
   <script src="../js/images.js"></script>
