@@ -130,6 +130,10 @@ footer a:hover {
   margin-top: 56px;
 }
 
+iframe {
+  width: 100%;
+}
+
 /* PROFILE */
 #cover-photo {
   margin-top: 56px;
