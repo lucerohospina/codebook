@@ -105,7 +105,7 @@ footer a:hover {
 
 /* HOME */
 .mt-custom {
-  margin-top: 80px;
+  margin-top: 56px;
 }
 
 .user-box {
@@ -123,6 +123,11 @@ footer a:hover {
   background-size: contain;
   background-position: center top;
   background-repeat: repeat-y;
+}
+
+.carousel-container {
+  background-color: var(--grayLab);
+  margin-top: 56px;
 }
 
 /* PROFILE */
@@ -144,7 +149,18 @@ footer a:hover {
 }
 
 .close:hover {
-  color: var(--yellowLab)
+  color: #fff;
+}
+
+.jumbo-style {
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1.5px solid var(--yellowLab);
+}
+
+.jumbo-first {
+  background-color: rgba(0, 128, 64, 0.514);
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  color: #fff;
 }
 
 /* Helpers */
@@ -184,6 +200,7 @@ footer a:hover {
 
 .btn-yellowLab:hover {
   background-color: var(--yellowLab-hover);
+  color: var(--grayLab);
 }
 
 .btn-grayLab {
@@ -248,6 +265,12 @@ footer a:hover {
 
 .gray-icon {
   color: #afafaf;
+}
+
+.dark-gray-icon {
+  color: var(--grayLab);
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 /* .moment-custom-xs {

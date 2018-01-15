@@ -52,44 +52,19 @@
     </section>
     <section class="container user-info">
       <div class="row">
-        <div class="col-12 col-md-6 mt-3">
+        <div class="col-12 col-md-10 mt-3">
           <div class="row">
-            <div class="col-4 offset-4 offset-sm-0">
-              <img id="profile-photo" class="img-fluid rounded-img" src="../assets/images/default.jpg" alt="">
+            <div class="col-4 offset-4 offset-sm-0 col-md-4">
+              <img id="profile-photo" class="img-fluid img-thumbnail rounded-img" src="../assets/images/default.jpg" alt="">
             </div>
-            <div class="col-8 offset-2 offset-sm-0 username text-center mt-3 text-md-left">
-              <h3 class="displayUsername">Username</h3>
-              <p><i class="fa fa-envelope-o gray-icon d-block d-sm-inline" aria-hidden="true"></i> <span id="displayEmail">code.2018@laboratoria.com</span></p>
-              <p><i class="fa fa-code gray-icon d-block d-sm-inline" aria-hidden="true"></i> <span>Developer Jr.</span></p>
-            </div>
-        </div>
-        </div>
-        <!-- <div class="col-12 col-md-6 mt-3">
-          <div class="card">
-            <div class="card-body">
-              <form id="create-post">
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1" class="sr-only">Create new post</label>
-                  <textarea id="write-posts" class="form-control" placeholder="¿Que quieres compartir?" rows="3" autofocus></textarea>
-                </div>
-                <div class="form-row mb-0">
-                  <div class="custom-file col">
-                    <label id="file-label" for="file" class="btn btn-grayLab rounded-corners">
-                      <input type="file" name="file" value="" class="custom-file-input d-none" id="file" accept="image/*">                        
-                      <i class="fa fa-picture-o" aria-hidden="true"></i>
-                    </label>
-                  </div>
-                  <div class="col">
-                    <button id="posts-btn" class="btn btn-yellowLab rounded-corners float-right" disabled>Compartir</button>                      
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="card-footer">
-              <small id="upload-msg" class="text-success font-weight-bold"></small>
+            <div class="col-8 offset-2 offset-sm-0 col-md-5 offset-md-3 username text-center mt-3 text-md-left">
+              <h1 class="displayUsername">Username</h1>
+              <p><i class="fa fa-envelope-o gray-icon d-block d-sm-inline" aria-hidden="true"></i> <span id="displayEmail"> code.2018@laboratoria.com</span></p>
+              <p><i class="fa fa-code gray-icon d-block d-sm-inline" aria-hidden="true"></i> <span> Developer Jr.</span></p>
+              <p><i class="fa fa-map-marker gray-icon d-block d-sm-inline" aria-hidden="true"></i> <span> Lima - Perú</span></p>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
     <section class="container mb-4">
@@ -97,22 +72,50 @@
         <div class="d-none d-md-block col-md-4" id="posts-container">
         </div>
         <div class="col-12 col-md-8">
-          <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <div class="jumbotron jumbo-first">
+            <h1 class="display-4">Bienvenida</h1>
+            <p class="lead"><i class="fa fa-heart" aria-hidden="true"></i> Hola Mundo, soy egresada de Laboratoria Lima 2017-2</p>
+            <p class="lead"><i class="fa fa-heart" aria-hidden="true"></i> Full stack for life!</p>
             <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <p>Estoy muy feliz de pertenecer a esta red y poder seguir creciendo juntas!</p>
+            <p class="lead text-center">
+              <a class="btn btn-yellowLab btn-lg" href="#" role="button"><i class="fa fa-github" aria-hidden="true"></i> mi portafolio</a>
             </p>
           </div>
-          <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <div class="jumbotron jumbo-style">
+            <h1 class="display-4">JS:Recurso Importante</h1>
+            <p class="lead">Libro que todo programador debe tener a la mano</p>
             <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <img src="../assets/images/eloquent.png" class="img-fluid img-thumbnail" alt="eloquent-js">
+            <p class="lead text-center mt-3">
+              <a class="btn btn-yellowLab btn-lg" href="http://eloquentjavascript.net/" role="button">Eloquent JS</a>
+            </p>
+          </div>
+          <div class="jumbotron jumbo-style">
+            <h1 class="display-4">J-query: Recurso Importante</h1>
+            <p class="lead">Guía muy útil!</p>
+            <hr class="my-4">
+            <img src="../assets/images/oscar-otero.JPG" class="img-fluid img-thumbnail" alt="oscar-otero">
+            <p class="lead text-center mt-3">
+              <a class="btn btn-yellowLab btn-lg" href="https://oscarotero.com/jquery/" role="button">Guía Jquery</a>
+            </p>
+          </div>
+          <div class="jumbotron jumbo-style">
+            <h1 class="display-4">Markdown: para el README perfecto</h1>
+            <p class="lead">Guía recomendada</p>
+            <hr class="my-4">
+            <img src="../assets/images/jcastro.png" class="img-fluid img-thumbnail" alt="jcastro">
+            <p class="lead text-center mt-3">
+              <a class="btn btn-yellowLab btn-lg" href="http://joedicastro.com/pages/markdown.html" role="button">Guía Markdown</a>
+            </p>
+          </div>
+          <div class="jumbotron jumbo-style">
+            <h1 class="display-4">Meetup: eventos, eventos!</h1>
+            <p class="lead">Para que estes siempre actualizada, busca los últimos eventos en tecnología de tu localidad</p>
+            <hr class="my-4">
+            <img src="../assets/images/meetup.JPG" class="img-fluid img-thumbnail" alt="meetup">
+            <p class="lead text-center mt-3">
+              <a class="btn btn-yellowLab btn-lg" href="https://www.meetup.com/es-ES/" role="button">Meetup</a>
             </p>
           </div>
         </div>
