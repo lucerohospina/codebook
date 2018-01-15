@@ -76,6 +76,10 @@
   min-height: 70vh;
 }
 
+#login-help {
+  color: #e6003d;
+}
+
 /* REGISTER */
 #reg-header {
   background-image: url('../assets/images/bottom-img.svg');
@@ -111,15 +115,14 @@ footer a:hover {
 
 .new-post {
   border: 1px solid var(--grayLab);
-  margin: 2%;
-  padding: 2%;
+  overflow: hidden;
 }
 
 .bottom-img {
   background-image: url('../assets/images/bottom-img-2.svg');
   background-size: contain;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  background-position: center top;
+  background-repeat: repeat-y;
 }
 
 /* PROFILE */
@@ -198,8 +201,8 @@ footer a:hover {
   background-color: #f2f2f2;
 }
 
-#file-label>input {
-  position: fixed;
+.white-text {
+  color: #fff;
 }
 
 .icon-btn {

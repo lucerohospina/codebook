@@ -56,6 +56,7 @@ $(document).ready(function() {
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
+        $('#login-help').removeClass('d-none');
       });
 
     firebase.auth().onAuthStateChanged(user => {
@@ -140,7 +141,7 @@ $(document).ready(function() {
       // No user is signed in.
     }
   });
-  
+
   // Cerrar sesión
   $signOut.click(function() {
     firebase.auth().signOut().then(function() {
