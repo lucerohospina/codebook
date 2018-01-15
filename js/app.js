@@ -22,6 +22,27 @@ $(document).ready(function() {
   var $userEmail = $('#displayEmail');
   var $profilePhoto = $('#profile-photo');
 
+  // var database = firebase.database();
+  
+  // function writeNumberToDatabase() {
+  //   var data = database.ref(); //root
+  //   data.transaction(function(datum) {
+  //     return { clicks: datum.clicks+1, timeStamp: firebase.database.ServerValue.TIMESTAMP};
+  //   });
+  //   //note we are using Firebase Servers Timestamp
+  // }
+  
+  // // using moment.js to format the returned unix timestamp...
+  // var aNumberRef = database.ref();
+  // aNumberRef.on('value', function(snapshot) {
+  //   document.getElementById("readOut").innerHTML = 'I\'ve been clicked   <b>' + snapshot.val().clicks + '</b> Times! <br />Last time it was <b>'+ moment(snapshot.val().timeStamp).calendar()+ '</b>';
+  // });
+  
+  // $('.like-btn').onclick = function() {
+  //   $('.like-btn').blur();
+  //   writeNumberToDatabase();
+  // };
+
   // Login con email
   $loginEmail.click(function(event) {
     event.preventDefault();
@@ -131,4 +152,8 @@ $(document).ready(function() {
       // An error happened.
     });
   });
-});
+});  
+
+// Boton de Me Gusta
+
+// $('.like-btn').on('click', likePost('p001'));

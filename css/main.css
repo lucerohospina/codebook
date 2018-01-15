@@ -135,6 +135,18 @@ footer a:hover {
   background-position: center;
 }
 
+#write-posts {
+  resize: none;
+}
+
+.close {
+  color: #fff;
+}
+
+.close:hover {
+  color: var(--yellowLab)
+}
+
 /* Helpers */
 
 .bg-yellowLab {
@@ -238,6 +250,11 @@ footer a:hover {
   color: #afafaf;
 }
 
+/* .moment-custom-xs {
+  margin-left: 10%;
+  font-size: 0.5em;
+} */
+
 /* Modal */
 .custom {
   border: 1.5px solid var(--grayLab);
@@ -252,4 +269,9 @@ footer a:hover {
   #welcome-image, #login-content {
     height: 100vh;
   }
+
+  /* .moment-custom {
+    font-size: 0.8em;
+    margin-left: 65%;
+  } */
 }

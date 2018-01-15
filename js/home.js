@@ -81,6 +81,7 @@ $(document).ready(function() {
           var msg = $textArea.val();
           var uid = firebase.database().ref().child('posts').push().key;
 
+
           $textArea.focus();
           $postBtn.attr('disabled', true);
           uploadMessage.removeClass('text-success');
@@ -96,6 +97,7 @@ $(document).ready(function() {
   
           firebase.database().ref('posts/').push(newPost);
         }
+
       }
       $textArea.val('');
       $file.val('');
@@ -122,7 +124,8 @@ $(document).ready(function() {
 
   $(document).on('click', '.like-btn', function() {
     console.log('click success!');
-    $(this).toggleClass('btn-danger').toggleClass('btn-secondary').toggleClass('font-weight-bold');
+
+    $(this).toggleClass('btn-danger').toggleClass('btn-secondary');
   }); 
 
   $(document).on('click', '.close', function() {
