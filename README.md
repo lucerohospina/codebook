@@ -4,10 +4,11 @@ Codebook es una red social de uso exclusivo para egresadas de los bootcamp de La
 
 ![login-view](https://user-images.githubusercontent.com/32287019/36445355-0e9395ae-164c-11e8-9fef-34ce8d1a01bf.JPG)
 
-## Desarrollado para [Laboratoria](http://laboratoria.la) 
+## Desarrollado para: 
+[Laboratoria](http://laboratoria.la) 
 
-#
-# PRODUCTO FINAL - SPRINT 3
+
+## PRODUCTO FINAL - SPRINT 3
 
 ## Crea tu Propia Red Social
 
